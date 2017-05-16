@@ -58,7 +58,7 @@ foreach(yaamp_get_algos() as $algo)
 	$price = controller()->memcache->get_database_scalar("current_price-$algo",
 		"SELECT price FROM hashrate WHERE algo=:algo AND time>$t ORDER BY time DESC LIMIT 1", array(':algo'=>$algo));
 
-	$norm = $price*$algo_norm;
+	$norm = $price*$algo_norm * 1000;
 	$norm = take_yaamp_fee($norm, $algo);
 
 	$algos[] = array($norm, $algo);
@@ -112,10 +112,10 @@ foreach($algos as $item)
 
 	$t = time() - 24*60*60;
 	$avgprice = dboscalar("SELECT avg(price) FROM hashrate WHERE algo=:algo AND time>$t", array(':algo'=>$algo));
-	$avgprice = $avgprice? mbitcoinvaluetoa(take_yaamp_fee($avgprice, $algo)): '-';
+	$avgprice = $avgprice? mbitcoinvaluetoa(take_yaamp_fee($avgprice*1000, $algo)): '-';
 
 	$algo_unit_factor = yaamp_algo_mBTC_factor($algo);
-	$btcmhday1 = $hashrate1 != 0? mbitcoinvaluetoa($total1 / $hashrate1 * 1000000 * 1000 * $algo_unit_factor): '';
+	$btcmhday1 = $hashrate1 != 0? mbitcoinvaluetoa($total1 / $hashrate1 * 1000000 * $algo_unit_factor): '';
 
 	$fees = yaamp_fee($algo);
 

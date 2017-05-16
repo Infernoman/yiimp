@@ -3,6 +3,8 @@
 $algo = user()->getState('yaamp-algo');
 $algo_unit = 'Mh';
 $algo_factor = yaamp_algo_mBTC_factor($algo);
+if ($algo_factor == 1000000000) $algo_unit = 'Ph';
+if ($algo_factor == 1000000) $algo_unit = 'Th';
 if ($algo_factor == 1000) $algo_unit = 'Gh';
 
 JavascriptFile("/extensions/jqplot/jquery.jqplot.js");

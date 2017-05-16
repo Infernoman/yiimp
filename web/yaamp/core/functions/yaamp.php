@@ -59,6 +59,7 @@ function yaamp_algo_mBTC_factor($algo)
 {
 	switch($algo) {
 	case 'sha256':
+                return 1000000000;
 	case 'sha256t':
 	case 'blake':
 	case 'blakecoin':
@@ -299,7 +300,7 @@ function yaamp_profitability($coin)
 	}
 
 	$algo_unit_factor = yaamp_algo_mBTC_factor($coin->algo);
-	return $btcmhd * $algo_unit_factor;
+	return $btcmhd * $algo_unit_factor / 1000;
 }
 
 function yaamp_convert_amount_user($coin, $amount, $user)

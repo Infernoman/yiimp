@@ -110,7 +110,7 @@ foreach($algos as $item)
 		"select avg(hashrate) from hashrate where time>$t and algo=:algo", array(':algo'=>$algo));
 
 	$algo_unit_factor = yaamp_algo_mBTC_factor($algo);
-	$btcmhday1 = $hashrate1 != 0? mbitcoinvaluetoa($total1 / $hashrate1 * 1000000 * 1000 * $algo_unit_factor): '';
+	$btcmhday1 = $hashrate1 != 0? mbitcoinvaluetoa($total1 / $hashrate1 * 1000000 * $algo_unit_factor): '';
 
 	$fees = yaamp_fee($algo);
 	$port = getAlgoPort($algo);
@@ -172,7 +172,7 @@ echo "</table>";
 echo "<p style='font-size: .8em'>
 		&nbsp;* best normalized multi algo<br>
 		&nbsp;** fees are now fixed manually.<br>
-		&nbsp;*** values in mBTC/Mh/day (mBTC/Gh/day for sha256 and blake algos)<br>
+		&nbsp;*** values in BTC/Ph/day<br>
 		</p>";
 
 echo "</div></div><br>";

@@ -148,10 +148,10 @@ $hashrate2 = max($hashrate2 , 1);
 $hashrate3 = max($hashrate3 , 1);
 $hashrate4 = max($hashrate4 , 1);
 
-$btcmhday1 = mbitcoinvaluetoa($total1 / $hashrate1 * 1000000 * 24 * 1000);
-$btcmhday2 = mbitcoinvaluetoa($total2 / $hashrate2 * 1000000 * 1 * 1000);
-$btcmhday3 = mbitcoinvaluetoa($total3 / $hashrate3 * 1000000 / 7 * 1000);
-$btcmhday4 = mbitcoinvaluetoa($total4 / $hashrate4 * 1000000 / 30 * 1000);
+$btcmhday1 = mbitcoinvaluetoa($total1 / $hashrate1 * 1000000 * 24 * 1000000000);
+$btcmhday2 = mbitcoinvaluetoa($total2 / $hashrate2 * 1000000 * 1 * 1000000000);
+$btcmhday3 = mbitcoinvaluetoa($total3 / $hashrate3 * 1000000 / 7 * 1000000000);
+$btcmhday4 = mbitcoinvaluetoa($total4 / $hashrate4 * 1000000 / 30 * 1000000000);
 
 $hashrate1 = Itoa2($hashrate1);
 $hashrate2 = Itoa2($hashrate2);
@@ -191,7 +191,7 @@ echo '</tr>';
 
 echo '<tr class="ssrow" style="border-top: 2px solid #eee;">';
 echo '<td width="18px"></td>';
-echo '<td colspan="2"><b>mBTC/Mh/d</b></td>';
+echo '<td colspan="2"><b>BTC/Ph/d</b></td>';
 
 echo '<td align="right" style="font-size: .9em;">'.$btcmhday1.'</td>';
 echo '<td align="right" style="font-size: .9em;">'.$btcmhday2.'</td>';

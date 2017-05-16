@@ -43,6 +43,8 @@ end;
 
 $algo_unit = 'Mh';
 $algo_factor = yaamp_algo_mBTC_factor($algo);
+if ($algo_factor == 1000000000) $algo_unit = 'Ph';
+if ($algo_factor == 1000000) $algo_unit = 'Th';
 if ($algo_factor == 1000) $algo_unit = 'Gh';
 
 echo <<<end
@@ -145,7 +147,7 @@ function graph_init_price(data)
 	var t = $.parseJSON(data);
 	var plot1 = $.jqplot('graph_results_price', t,
 	{
-		title: '<b>Estimate (mBTC/{$algo_unit}/day)</b>',
+		title: '<b>Estimate (BTC/{$algo_unit}/day)</b>',
 		axes: {
 			xaxis: {
 				tickInterval: 7200,
@@ -194,7 +196,7 @@ function pool_hashrate_graph_init(data)
 	var t = $.parseJSON(data);
 	var plot1 = $.jqplot('pool_hashrate_results', t,
 	{
-		title: '<b>Pool Hashrate (Mh/s)</b>',
+		title: '<b>Pool Hashrate (Ph/s)</b>',
 		axes: {
 			xaxis: {
 				tickInterval: 7200,

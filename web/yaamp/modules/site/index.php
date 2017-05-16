@@ -82,7 +82,7 @@ $payout_freq = (YAAMP_PAYMENTS_FREQ / 3600)." hours";
 <ul>
 
 <li><b>BitcoinTalk</b> - <a href='https://bitcointalk.org/index.php?topic=508786.0' target=_blank >https://bitcointalk.org/index.php?topic=508786.0</a></li>
-<li><b>IRC</b> - <a href='http://webchat.freenode.net/?channels=#yiimp' target=_blank >http://webchat.freenode.net/?channels=#yiimp</a></li>
+<li><b>IRC</b> - <a href='http://webchat.freenode.net/?channels=#infernopool' target=_blank >http://webchat.freenode.net/?channels=#infernopool</a></li>
 
 <li><b>API</b> - <a href='/site/api'>http://<?= YAAMP_SITE_URL ?>/site/api</a></li>
 <li><b>Difficulty</b> - <a href='/site/diff'>http://<?= YAAMP_SITE_URL ?>/site/diff</a></li>
@@ -101,8 +101,7 @@ $payout_freq = (YAAMP_PAYMENTS_FREQ / 3600)." hours";
 
 <!--  -->
 
-<a class="twitter-timeline" href="https://twitter.com/hashtag/YAAMP" data-widget-id="617405893039292417" data-chrome="transparent" height="450px" data-tweet-limit="3" data-aria-polite="polite">Tweets about #YAAMP</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<a class="twitter-timeline" data-height="600" data-dnt="true" data-theme="light" href="https://twitter.com/infernopool1">Tweets by infernopool1</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 </td><td valign=top>
 
