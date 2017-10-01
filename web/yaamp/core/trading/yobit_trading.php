@@ -146,12 +146,6 @@ function doYobitTrading($quick=false)
 		$coin = getdbosql('db_coins', "symbol=:symbol OR symbol2=:symbol", array(':symbol'=>strtoupper($symbol)));
 		if(!$coin || is_array($coin) || $coin->dontsell) continue;
 
-		$market = getdbosql('db_markets', "coinid=$coin->id and name='yobit'");
-		if($market) {
-			$market->lasttraded = time();
-			$market->save();
-		}
-
 		if($amount*$coin->price < $min_btc_trade) continue;
 		$pair = "{$symbol}_btc";
 
@@ -205,6 +199,12 @@ function doYobitTrading($quick=false)
 		if(!$res || !$res['success']) {
 			debuglog("yobit err: ".json_encode($res));
 			continue;
+		}
+
+		$market = getdbosql('db_markets', "coinid=$coin->id and name='yobit'");
+		if($market) {
+			$market->lasttraded = time();
+			$market->save();
 		}
 
 		$db_order = new db_orders;
